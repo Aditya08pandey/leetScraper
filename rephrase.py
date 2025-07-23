@@ -32,16 +32,12 @@ Output ONLY Markdown with sections:
 """
 
     try:
-        response = client.generate(
+        response = client.chat(
             model=COHERE_MODEL,
-            prompt=prompt,
+            message=prompt,
             temperature=0.5,
-            max_tokens=1000,
-            p=0.75,
-            k=0,
-            stop_sequences=[],
-            return_likelihoods='NONE'
+            max_tokens=1000
         )
-        return response.generations[0].text.strip()
+        return response.text.strip()
     except Exception as e:
         return f"⚠️ Error: {str(e)}"

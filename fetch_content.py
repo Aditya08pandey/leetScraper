@@ -24,3 +24,5 @@ def fetch_content(slug):
     res.raise_for_status()
     d = res.json()["data"]["question"]
     return d["content"], [t["name"] for t in d["topicTags"]]
+
+

@@ -6,7 +6,7 @@ load_dotenv()
 import cohere
 
 COHERE_API_KEY  = os.getenv("COHERE_API_KEY")
-COHERE_MODEL    = os.getenv("COHERE_MODEL", "command")
+COHERE_MODEL    = os.getenv("COHERE_MODEL", "command-r-plus")
 client = cohere.Client(COHERE_API_KEY)
 
 
